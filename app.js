@@ -10,6 +10,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //imported routes
 const agricOfficer = require("./routes/agric-officer");
+app.get("/", (req, res) => {
+  res.send("App is running");
+});
 app.use("/agric-officers", agricOfficer);
 
 app.listen(port, () => {

@@ -12,12 +12,12 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // imported routes
-const agricOfficer = require("./routes/agric-officer");
+const apiRoute = require("./routes/api");
 
 app.get("/", (req, res) => {
   res.send("App is running");
 });
-app.use("/agric-officers", agricOfficer);
+app.use("/api", apiRoute);
 
 app.listen(port, process.env.RAILWAY_HOST, () => {
   console.log(`app listening on port:${port}`);

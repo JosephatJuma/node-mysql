@@ -9,6 +9,7 @@ const database = mysql
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
     port: process.env.PORT,
+    connectTimeout: 60000, // Set connection timeout to 30 seconds
   })
   .promise();
 

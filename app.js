@@ -19,6 +19,6 @@ app.get("/", (req, res) => {
 });
 app.use("/agric-officers", agricOfficer);
 
-app.listen(process.env.RAILWAY_HOST, () => {
+app.listen(port, process.env.RAILWAY_HOST, () => {
   console.log(`app listening on port:${port}`);
 });

@@ -1,9 +1,11 @@
 const express = require("express");
+const dotenv = require("dotenv");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
 const cors = require("cors");
+dotenv.config();
 
 app.use(cors());
 app.use(express.json());
@@ -17,6 +19,6 @@ app.get("/", (req, res) => {
 });
 app.use("/agric-officers", agricOfficer);
 
-app.listen(port, () => {
+app.listen(process.env.RAILWAY_HOST, () => {
   console.log(`app listening on port:${port}`);
 });
